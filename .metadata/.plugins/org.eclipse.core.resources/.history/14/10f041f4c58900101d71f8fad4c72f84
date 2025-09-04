@@ -1,0 +1,50 @@
+package fatorial;
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        char continuar = 's';
+
+        while (continuar == 's' || continuar == 'S') {
+            System.out.println("Digite um numero inteiro nao negativo para calcular o fatorial: ");
+            if (scanner.hasNextInt()) {
+                int numero = scanner.nextInt();
+
+                if (numero < 0) {
+                    System.out.println("Fatorial nao definido para numeros negativos.");
+                } else {
+                    BigInteger fatorial = calcularFatorial(numero);
+                    System.out.println("O fatorial de " + numero + " e " + fatorial);
+                }
+            } else {
+                System.out.println("Entrada invalida. Por favor, digite um numero inteiro.");
+                scanner.next(); // Limpa a entrada invalida
+            }
+
+            System.out.println("Deseja continuar? (s/n)");
+            continuar = scanner.next().toLowerCase().charAt(0); // Converte para minusculo para facilitar a comparacao
+        }
+
+        System.out.println("Programa encerrado.");
+        scanner.close();
+    }
+
+    public static BigInteger calcularFatorial(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("O fatorial nao esta definido para numeros negativos.");
+        }
+        BigInteger resultado = BigInteger.ONE;
+        for (int i = 1; i <= n; i++) {
+            resultado = resultado.multiply(BigInteger.valueOf(i));
+        }
+        return resultado;
+    
+        
+        	}
+        }
+    
+
