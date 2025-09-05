@@ -1,6 +1,6 @@
 package fatorial;
 
-import java.math.BigInteger; // Import necessário para usar a classe BigInteger
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Main {

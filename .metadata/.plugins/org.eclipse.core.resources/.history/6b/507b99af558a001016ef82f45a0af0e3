@@ -1,6 +1,6 @@
 package fatorial;
 
-import java.math.BigInteger; // Import necessário para usar a classe BigInteger
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Main {
@@ -32,12 +32,12 @@ public class Main {
         System.out.println("Programa encerrado.");
         scanner.close();
     }      
-    
-    public static BigInteger calcularFatorial(int n) { 
+
+    public static BigInteger calcularFatorial(int n) {
        
-        BigInteger resultado = BigInteger.ONE;  // (BigInteger.ONE é uma constante equivalente ao valor 1)
+        BigInteger resultado = BigInteger.ONE;
         for (int i = 1; i <= n; i++) {
-            resultado = resultado.multiply(BigInteger.valueOf(i)); // Como i é int, precisa converter para BigInteger usando valueOf(i)
+            resultado = resultado.multiply(BigInteger.valueOf(i));
         }
         return resultado;
     
